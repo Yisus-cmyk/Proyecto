@@ -1,11 +1,11 @@
-//Movimiento del ratón
+    //Movimiento del ratón
 const cursor = document.querySelector(".cursor-personalizado");
 
 document.addEventListener("mousemove", (e) => {
     cursor.style.setProperty("--x", e.clientX + "px" )
     cursor.style.setProperty("--y", e.clientY + "px" )
 });
-
+    //Animacion Parallax Typo
 const deslizarDrch = document.querySelector(".trazo p");
         const deslizarIzq = document.querySelector(".bruto p");
         let scrollActual = 0;
