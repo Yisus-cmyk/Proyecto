@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap');
+
+:root{
+    --color-principal: #E9E767;
+}
+*{
+    cursor: none !important;
+    margin: 0;
+    padding: 0;
+}
+body{
+    height: 200dvh;
+}
+.cursor-personalizado{
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--color-principal);
+    mix-blend-mode: difference;
+    pointer-events: none;
+    z-index: 1;
+    left: var(--x, 50%);
+    top: var(--y, 50%);
+    transform: translate(-50%, -50%);
+
+}
+nav{
+    background-color: var(--color-principal);
+    height: 13dvh;
+    width: 100%;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Funnel Display";
+}
+    .parallaxText{
+        font-weight: 500;
+        padding: 20px;
+        position: relative;
+        font-size: 2em;
+    }
+    div.trazo{
+        position: relative;
+        left: 20px;
+        width: 85px;
+        height: 37px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: flex-start;
+        justify-content: flex-end;
+    }
+        .trazo p{
+        white-space: nowrap;
+        position: absolute;
+        left: -230px;
+    }
+    div.bruto{
+        position: relative;
+        left: 40px;
+        width: 90px;
+        height: 37px;
+        overflow: hidden;
+        display: flex;
+    }
+        .bruto p{
+        white-space: nowrap;
+        position: absolute;
+        left: 0px;
+    }
