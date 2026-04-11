@@ -2,6 +2,7 @@
 
 :root{
     --color-principal: #E9E767;
+    --tipo: "Funnel Display"
 }
 *{
     cursor: none !important;
@@ -9,7 +10,7 @@
     padding: 0;
 }
 body{
-    height: 200dvh;
+    font-family: var(--tipo);
 }
 .cursor-personalizado{
     position: fixed;
@@ -41,6 +42,7 @@ header{
     align-items: center;
     font-family: "Funnel Display";
     transition: transform 0.4s ease;
+    z-index: 9;
 }
         .header-hidden{
             transform: translateY(-100%);
@@ -88,7 +90,6 @@ div.logo{
         width: 100px;
         height: 100px;
     }
-
     .logo-img {
         width: 100%;
         height: 100%;
@@ -104,7 +105,6 @@ a.about-us{
     font-weight: 500;
     font-size: 18px;
     height: 20px;
-    line-height: 20px;
     overflow: hidden;
 }
     .about-us p:first-child{
@@ -124,9 +124,91 @@ a.about-us{
     .about-us:hover p:last-child{
         transform: translateY(-100%);
     }
-
-main{
+section.img-main{
     height: 100dvh;
     width: 100%;
-    background: url(../img/06.png)no-repeat center/ cover;
+    background: url(../img/06.png)no-repeat center/ cover fixed;
+}
+main{
+    background-color: #272727;
+    height: 200dvh;
+}
+main h2{
+    display: inline-block;
+    color: var(--color-principal);
+    font-size: 150px;
+    position: relative;
+    left: 150px;
+    top: -85px;
+    line-height: 140px;
+}
+main h3{
+    display: inline-flex;
+    align-items: baseline;
+    color: white;
+    font-size: 42px;
+    position: relative;
+    top: -30px;
+    left: 0px;
+}
+h3 span.animacion{
+    display: inline-flex;
+    overflow: hidden;
+    height: 1.5em;
+    vertical-align: bottom;
+    margin: 0 12px;
+}
+span.animacion .contenido{
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+}
+.animacion span{
+    display: block;
+    height: 1.5em;
+    line-height: 1.5em;
+}
+span.animacion:hover span.contenido{
+    transform: translateY(-1.5em);
+}
+footer{
+    width: 100%;
+    height: 75dvh;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+footer h2{
+    color: white;
+    font-size: 150px;
+    line-height: 140px;
+    margin: 40px;
+
+}
+footer p{
+    font-size: 42px;
+    color: white;
+    display: flex;
+    align-self: flex-end;
+    align-items: flex-start;
+}
+footer p:last-child{
+    font-size: 18px;
+    color: white;
+    width: auto;
+    display: inline-block;
+    align-self: center;
+    position: relative;
+    top: -25px;
+}
+footer a{
+    text-decoration: none;
+    color: white;
+}
+footer a:hover{
+    color: black;
+    background-color: var(--color-principal);
 }

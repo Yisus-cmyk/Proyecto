@@ -1,4 +1,7 @@
-@media screen and (min-width:450px){
-
-    
+@media screen and (max-width:450px){
+    header{
+        width: 100%;
+        height: 10dvh;
+        background-color: var(--color-principal);
+    }
 }
