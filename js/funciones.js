@@ -6,7 +6,7 @@ document.addEventListener("mousemove", (e) => {
     cursor.style.setProperty("--y", e.clientY + "px" )
 });
 document.addEventListener("mouseover", (e) => {
-    if(e.target.closest("a, button")){
+    if(e.target.closest("a, button, input")){
         cursor.classList.add("cursor-activo")
     }else{
         cursor.classList.remove("cursor-activo")

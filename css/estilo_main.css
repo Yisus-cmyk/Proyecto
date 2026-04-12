@@ -20,7 +20,7 @@ body{
     background-color: var(--color-principal);
     mix-blend-mode: difference;
     pointer-events: none;
-    z-index: 1;
+    z-index: 10;
     left: var(--x, 50%);
     top: var(--y, 50%);
     transform: translate(-50%, -50%);
@@ -40,7 +40,6 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-family: "Funnel Display";
     transition: transform 0.4s ease;
     z-index: 9;
 }
@@ -130,7 +129,7 @@ section.img-main{
     background: url(../img/06.png)no-repeat center/ cover fixed;
 }
 main{
-    background-color: #272727;
+    background-color: rgb(30, 30, 30);
     height: 200dvh;
 }
 main h2{
@@ -174,41 +173,81 @@ span.animacion:hover span.contenido{
 footer{
     width: 100%;
     height: 75dvh;
+    padding-bottom: 20px;
     background-color: black;
     display: flex;
     flex-direction: column;
-    box-sizing: border-box;
-    justify-content: space-between;
-    align-items: flex-start;
 }
-footer h2{
-    color: white;
-    font-size: 150px;
-    line-height: 140px;
-    margin: 40px;
-
-}
-footer p{
-    font-size: 42px;
-    color: white;
-    display: flex;
-    align-self: flex-end;
-    align-items: flex-start;
-}
-footer p:last-child{
-    font-size: 18px;
-    color: white;
-    width: auto;
-    display: inline-block;
-    align-self: center;
-    position: relative;
-    top: -25px;
-}
-footer a{
-    text-decoration: none;
-    color: white;
-}
-footer a:hover{
-    color: black;
-    background-color: var(--color-principal);
-}
+    section.grid{
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(5,1fr);
+    width: 100%;
+    height: 100%;
+    align-content: center;
+    column-gap: 20px;
+    }
+        .grid img{
+            grid-column: 1;
+            grid-row: 1/5;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            align-self: center;
+            transform: translate(-70px, 20px);
+        }
+        .grid h2{
+            grid-column: 2;
+            grid-row: 1;
+            font-size: 90px;
+            color: white;
+            line-height: 0.85;
+            margin-bottom: 40px;
+            position: relative;
+            top: -60px;
+            left: -60px;
+        }
+        section.grid input{
+            padding: 20px;
+            grid-column: 2;
+            background-color: rgba(30, 30, 30, 0.6);
+            color: white;
+            border: none;
+            border-bottom: white 2px solid;
+            outline: none;
+            margin: 20px;
+            font-size: 18px;
+        }
+        section.grid button{
+            grid-column: 2;
+            justify-self: end;
+            background-color: white;
+            color: black;
+            border: none;
+            padding: 20px 40px;
+            margin: 20px;
+            font-size: 18px;
+            transition: 0.2s ease-in-out;
+        }
+            section.grid button:hover{
+                background-color: var(--color-principal);
+                color: black;
+                transform: translateY(-10px);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            }
+    footer p.pie-pagina{
+        font-size: 18px;
+        color: white;
+        align-self: center;
+        justify-content: flex-end;
+        position: relative;
+        top: -20px;
+    }
+    footer a{
+        text-decoration: none;
+        color: white;
+    }
+    footer a:hover{
+        color: black;
+        background-color: var(--color-principal);
+    }
