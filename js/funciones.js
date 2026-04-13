@@ -42,7 +42,7 @@ const deslizarDrch = document.querySelector(".trazo p");
     window.addEventListener("scroll", () => {
         const scrollActualY = window.scrollY;
         
-        if(scrollActualY > scrollDown && scrollActualY > 80){
+        if(scrollActualY > scrollDown && scrollActualY > 80 && window.innerWidth > 1024){
             header.classList.add("header-hidden")
         }else{
             header.classList.remove("header-hidden")
