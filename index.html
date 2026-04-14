@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/estilo_tablet.css" media="screen and (min-width: 769px) and (max-width: 1024px)">
     <link rel="stylesheet" href="css/estilo_mobile.css" media="screen and (max-width: 768px)">
     <script defer src="js/funciones.js"></script>
+    <script src="js/submitForm.js"></script>
 </head>
 <body>
     <div class="cursor-personalizado"></div>
@@ -53,8 +54,8 @@
             <h2>¿TIENES UN <br>&emsp;PROYECTO?</h2>
             <input type="text" name="nombre" id="" placeholder="Tu Nombre">
             <input type="text" name="correo" placeholder="Tu correo">
-            <input type="text" name="idea" placeholder="¡Cuentanos brevemente!">
-            <button type="submit">Enviar respuesta</button>
+            <input type="text" name="mensaje" placeholder="¡Cuentanos brevemente!">
+            <button type="button" onClick="submitForm()" >Enviar respuesta</button>
         </section>
         <p class="pie-pagina">¡Siguenos en <a href="https://www.instagram.com/trazo.bruto/" target="_blank">Instagram</a>!</p>
     </footer>
