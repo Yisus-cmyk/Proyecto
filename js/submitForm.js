@@ -3,10 +3,13 @@ function submitForm() {
     const correo = document.querySelector('input[name="correo"]').value;
     const mensaje = document.querySelector('input[name="mensaje"]').value;
 
+    const inputs = document.querySelectorAll(".form input");
+    const boton = document.querySelector(".form button");
+
     console.log(nombre,"nombre")
     console.log(correo,"correo")
     console.log(mensaje,"idea")
-
+        //Añadir .env -gitignore
     fetch("https://hook.eu1.make.com/elp6ioymxouae46u3rjq4rw6ijrkoowi", {
         method: "POST",
         headers: {
@@ -22,4 +25,11 @@ function submitForm() {
     .catch(err => {
         console.error(err);
     });
+    inputs.forEach(input =>{
+        input.value = "";
+    });
+    boton.textContent = "¡Mensaje enviado!";
+    setTimeout(() => {
+        boton.textContent = "¡Enviar respuesta!"
+    },3000)
 }

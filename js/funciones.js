@@ -13,20 +13,36 @@ document.addEventListener("mouseover", (e) => {
     }
 });
 
-const botonMenu = document.querySelector(".boton-menu");
+const botonMenu = document.querySelector(".btn-menu");
+const navMenu = document.querySelector("nav.menu");
+const trazoBruto = document.querySelector(".parallaxText");
+
 botonMenu.addEventListener("click", () =>{
     botonMenu.classList.toggle("desplegado")
+    navMenu.classList.toggle("activo")
+    trazoBruto.classList.toggle("oscuro")
+    if(navMenu.classList.contains("activo")){
+        document.body.style.overflow = "hidden"
+    }else{
+        document.body.style.overflow = ""
+    }
 });
 
     //Animacion Parallax Typo
-const deslizarDrch = document.querySelector(".trazo p");
+        const deslizarDrch = document.querySelector(".trazo p");
         const deslizarIzq = document.querySelector(".bruto p");
         let scrollActual = 0;
         let targetScroll = 0;
         const ease = 0.8;
 
         function AnimacionTipo(){
-            targetScroll = window.scrollY;
+
+            if (navMenu.classList.contains("activo")){
+                targetScroll = 0; 
+            } else {
+                targetScroll = window.scrollY;
+            };
+
             scrollActual += (targetScroll - scrollActual) * ease;
 
             const widthDrch = deslizarDrch.offsetWidth / 2;
@@ -77,6 +93,5 @@ document.addEventListener("mousemove", (e) => {
         logo.style.transform = `translate(0px, 0px)`;
     }
 });
-
-
+    
 console.log("Contenido cargado correctamente.")
