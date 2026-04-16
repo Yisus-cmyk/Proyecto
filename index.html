@@ -6,7 +6,7 @@
     <title>Trazo Bruto</title>
     <link rel="icon" href="img/favicon/favicon-32x32.png">
     <link rel="stylesheet" href="css/estilo_main.css">
-    <link rel="stylesheet" href="css/estilo_tablet.css" media="screen and (min-width: 769px) and (max-width: 1024px)">
+    <link rel="stylesheet" href="css/estilo_tablet.css" media="screen and (max-width: 1180px)">
     <link rel="stylesheet" href="css/estilo_mobile.css" media="screen and (max-width: 768px)">
     <script defer src="js/funciones.js"></script>
     <script src="js/submitForm.js"></script>
@@ -29,11 +29,16 @@
             </a>
         </div>
             
-        <a href="aboutUs.html" class="about-us">
-            <p>About Us</p>
-            <p>About Us</p>
-            
+        <a href="pages/aboutUs.html" class="about-us">
+            <p>Acerca de</p>
+            <p>Acerca de</p>
         </a>
+    <!--TABLET/MOVIL RESPONSIVE-->
+        <button class="boton-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </header>
     
     <main>
@@ -49,15 +54,21 @@
         creativos.</h3>
     </main>
     <footer>
-        <section class="grid">
-            <img src="img/logo_isotipo_blanco.png" alt="">
-            <h2>¿TIENES UN <br>&emsp;PROYECTO?</h2>
-            <input type="text" name="nombre" id="" placeholder="Tu Nombre">
-            <input type="text" name="correo" placeholder="Tu correo">
-            <input type="text" name="mensaje" placeholder="¡Cuentanos brevemente!">
-            <button type="button" onClick="submitForm()" >Enviar respuesta</button>
+        <section class="flex">
+            <div class="footer-img">
+                <img src="img/logo_isotipo_blanco.png" alt="">
+            </div>
+            <div class="form">
+                <h2>¿TIENES UN <br>&emsp;PROYECTO?</h2>
+                <input type="text" name="nombre" id="" placeholder="Tu Nombre">
+                <input type="text" name="correo" placeholder="Tu correo">
+                <input type="text" name="mensaje" placeholder="¡Cuentanos brevemente!">
+                <button type="button" onClick="submitForm()" >Enviar respuesta</button>
+            </div>
         </section>
-        <p class="pie-pagina">¡Siguenos en <a href="https://www.instagram.com/trazo.bruto/" target="_blank">Instagram</a>!</p>
+        <section class="pie-pagina">
+            <p>¡Siguenos en <a href="https://www.instagram.com/trazo.bruto/" target="_blank">Instagram</a>!</p>
+        </section>
     </footer>
 </body>
 </html>

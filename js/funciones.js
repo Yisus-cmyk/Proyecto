@@ -12,6 +12,12 @@ document.addEventListener("mouseover", (e) => {
         cursor.classList.remove("cursor-activo")
     }
 });
+
+const botonMenu = document.querySelector(".boton-menu");
+botonMenu.addEventListener("click", () =>{
+    botonMenu.classList.toggle("desplegado")
+});
+
     //Animacion Parallax Typo
 const deslizarDrch = document.querySelector(".trazo p");
         const deslizarIzq = document.querySelector(".bruto p");
@@ -42,7 +48,7 @@ const deslizarDrch = document.querySelector(".trazo p");
     window.addEventListener("scroll", () => {
         const scrollActualY = window.scrollY;
         
-        if(scrollActualY > scrollDown && scrollActualY > 80 && window.innerWidth > 1024){
+        if(scrollActualY > scrollDown && scrollActualY > 80 && window.innerWidth > 1180){
             header.classList.add("header-hidden")
         }else{
             header.classList.remove("header-hidden")
