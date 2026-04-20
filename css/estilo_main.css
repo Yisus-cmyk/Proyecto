@@ -11,6 +11,7 @@
 }
 body{
     font-family: var(--tipo);
+    background-color: rgb(30, 30, 30);
 }
 .cursor-personalizado{
     position: fixed;
@@ -132,6 +133,7 @@ section.img-main{
     background: url(../img/06.png)no-repeat center/ cover fixed;
 }
 main{
+    /*QUITAR BGCOLOR*/
     background-color: rgb(30, 30, 30);
     height: 200dvh;
 }
@@ -216,7 +218,6 @@ footer{
             box-sizing: border-box;
         }
         section.flex button{
-            grid-column: 2;
             justify-self: end;
             background-color: white;
             color: black;
