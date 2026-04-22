@@ -45,6 +45,9 @@
         border: none;
         z-index: 4;
         }
+        .menu_main{
+            display: none;
+        }
             .btn-menu span{
                 display: block;
                 width: 40px;
