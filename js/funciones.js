@@ -6,7 +6,7 @@ document.addEventListener("mousemove", (e) => {
     cursor.style.setProperty("--y", e.clientY + "px" )
 });
 document.addEventListener("mouseover", (e) => {
-    if(e.target.closest("a, button, input, .carrusel")){
+    if(e.target.closest("a, button, input, .carrusel, .carrusel-magia, .carrusel-ciencia, .carrusel-miCasa, .carrusel-huerta")){
         cursor.classList.add("cursor-activo")
     }else{
         cursor.classList.remove("cursor-activo")
@@ -93,76 +93,76 @@ document.addEventListener("mousemove", (e) => {
         logo.style.transform = `translate(0px, 0px)`;
     }
 });
+
 window.addEventListener("load", () => {
-    const carrusel = document.querySelector(".carrusel");
-    let isDown = false;
-    let startX;
-    let scrollLeft;
-    let autoPlayInterval;
 
-    // 1. Clonamos el contenido para el efecto infinito
-    carrusel.innerHTML += carrusel.innerHTML;
+    const carruseles = document.querySelectorAll(".carrusel, .carrusel-magia, .carrusel-ciencia, .carrusel-miCasa, .carrusel-huerta");
 
-    const startAutoPlay = () => {
-        clearInterval(autoPlayInterval);
-        autoPlayInterval = setInterval(() => {
-            if (!isDown) {
-                carrusel.scrollLeft += 1;
+    carruseles.forEach(carrusel => {
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+        let autoPlayInterval;
+
+        carrusel.innerHTML += carrusel.innerHTML;
+
+        const startAutoPlay = () => {
+            clearInterval(autoPlayInterval);
+            autoPlayInterval = setInterval(() => {
+                if (!isDown) {
+                    carrusel.scrollLeft += 1;
+                }
+            }, 30);
+        };
+
+        const stopAutoPlay = () => clearInterval(autoPlayInterval);
+
+        const startAction = (e) => {
+            isDown = true;
+            stopAutoPlay();
+            const pageX = e.pageX || e.touches[0].pageX;
+            startX = pageX - carrusel.offsetLeft;
+            scrollLeft = carrusel.scrollLeft;
+        };
+
+        const stopAction = () => {
+            isDown = false;
+            startAutoPlay();
+        };
+
+        const moveAction = (e) => {
+            if (!isDown) return;
+            if (e.cancelable) e.preventDefault(); 
+
+            const pageX = e.pageX || e.touches[0].pageX;
+            const x = pageX - carrusel.offsetLeft;
+            const walk = (x - startX) * 2; 
+            carrusel.scrollLeft = scrollLeft - walk;
+        };
+
+        //RATÓN
+        carrusel.addEventListener('mousedown', startAction);
+        carrusel.addEventListener('mouseleave', stopAction);
+        carrusel.addEventListener('mouseup', stopAction);
+        carrusel.addEventListener('mousemove', moveAction);
+        //MOVIL
+        carrusel.addEventListener('touchstart', startAction, { passive: false });
+        carrusel.addEventListener('touchend', stopAction);
+        carrusel.addEventListener('touchmove', moveAction, { passive: false });
+
+        // Lógica de bucle infinito
+        carrusel.addEventListener("scroll", () => {
+            const mitad = carrusel.scrollWidth / 2;
+            if (carrusel.scrollLeft >= mitad) {
+                carrusel.scrollLeft = 1;
+            } else if (carrusel.scrollLeft <= 0) {
+                carrusel.scrollLeft = mitad - 1;
             }
-        }, 30);
-    };
+        });
 
-    const stopAutoPlay = () => clearInterval(autoPlayInterval);
-
-    // --- FUNCIONES UNIFICADAS ---
-    const startAction = (e) => {
-        isDown = true;
-        stopAutoPlay();
-        // Detecta si es touch o click para obtener la posición X
-        const pageX = e.pageX || e.touches[0].pageX;
-        startX = pageX - carrusel.offsetLeft;
-        scrollLeft = carrusel.scrollLeft;
-    };
-
-    const stopAction = () => {
-        isDown = false;
+        // Iniciamos el autoplay para este carrusel específico
         startAutoPlay();
-    };
-
-    const moveAction = (e) => {
-        if (!isDown) return;
-        
-        // Evita que la página haga scroll vertical mientras mueves el carrusel
-        if (e.cancelable) e.preventDefault(); 
-
-        const pageX = e.pageX || e.touches[0].pageX;
-        const x = pageX - carrusel.offsetLeft;
-        const walk = (x - startX) * 2; 
-        carrusel.scrollLeft = scrollLeft - walk;
-    };
-
-    // --- EVENTOS DE RATÓN (PC) ---
-    carrusel.addEventListener('mousedown', startAction);
-    carrusel.addEventListener('mouseleave', stopAction);
-    carrusel.addEventListener('mouseup', stopAction);
-    carrusel.addEventListener('mousemove', moveAction);
-
-    // --- EVENTOS DE TOQUE (MÓVIL) ---
-    carrusel.addEventListener('touchstart', startAction, { passive: false });
-    carrusel.addEventListener('touchend', stopAction);
-    carrusel.addEventListener('touchmove', moveAction, { passive: false });
-
-    // --- LÓGICA DE BUCLE INFINITO ---
-    carrusel.addEventListener("scroll", () => {
-        const mitad = carrusel.scrollWidth / 2;
-        if (carrusel.scrollLeft >= mitad) {
-            carrusel.scrollLeft = 1;
-        } else if (carrusel.scrollLeft <= 0) {
-            carrusel.scrollLeft = mitad - 1;
-        }
     });
-
-    startAutoPlay();
 });
 
 

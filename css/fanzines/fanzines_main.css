@@ -5,3 +5,126 @@ header.fanzines{
 body{
     background-color: rgb(30, 30, 30);
 }
+.F_CYM h2{
+    display: inline-block;
+    color: white;
+    font-size: 120px;
+    padding: 130px 0 0 100px;
+    line-height: 0.8;
+}
+.info-flex-cym,
+.info-flex-ciencia,
+.info-flex-miCasa,
+.info-flex-huerta{
+    display: flex;
+    width: 100%;
+    height: 70dvh;
+    padding: 20px 0 20px;
+    justify-content: center; 
+    align-items: center;
+    gap: 30px; 
+}
+
+.info-flex-cym p,
+.info-flex-huerta p{
+    color: white;
+    width: 50%; 
+    text-align: end;
+    font-size: 32px;
+    margin: 0; 
+}
+
+.info-flex-cym img,
+.info-flex-huerta img{
+    width: auto;
+    height: 100%;
+    max-width: 40%; 
+    object-fit: contain;
+}
+.carrusel-magia,
+.carrusel-ciencia,
+.carrusel-miCasa,
+.carrusel-huerta{
+    display: flex;
+    overflow-x: hidden;
+    width: 100%;
+    height: 50dvh;
+    display: flex;
+    gap: 10px;
+    padding-bottom: 20px;
+    user-select: none;
+}
+    .carrusel-magia::-webkit-scrollbar {
+        display: none;
+    }
+    .carrusel-magia img,
+    .carrusel-ciencia img,
+    .carrusel-miCasa img,
+    .carrusel-huerta img{
+        height: 100%;
+        object-fit: cover;
+        pointer-events: none;
+    }
+
+.info-flex-ciencia img,
+.info-flex-miCasa img{
+    width: auto;
+    height: 100%;
+    padding-left: 30px;
+    object-fit: contain;
+}
+.info-flex-ciencia p,
+.info-flex-miCasa p{
+    color: white;
+    width: 50%; 
+    text-align: start;
+    font-size: 32px;
+    margin: 0; 
+}
+.miCasa h2{
+    display: flex;
+    justify-content: flex-end;
+    color: white;
+    font-size: 120px;
+    padding: 20px 100px;
+    line-height: 0.8;
+}
+.huerta h2{
+    display: inline-block;
+    color: white;
+    font-size: 120px;
+    padding:20px 100px;
+    line-height: 0.8;
+}
+/*HOVER CARRUSEL*/
+.item{
+    position: relative;
+    height: 100%;
+    flex-shrink: 0;
+}
+.item img{
+    height: 100%;
+    display: block;
+    transition: filter 0.3s ease;
+}
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.overlay span{
+    color: white;
+    font-size: 32px;
+    text-align: center;
+}
+.item:hover .overlay{
+    opacity: 1;
+}
