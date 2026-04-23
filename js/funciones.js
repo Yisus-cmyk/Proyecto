@@ -6,7 +6,7 @@ document.addEventListener("mousemove", (e) => {
     cursor.style.setProperty("--y", e.clientY + "px" )
 });
 document.addEventListener("mouseover", (e) => {
-    if(e.target.closest("a, button, input")){
+    if(e.target.closest("a, button, input, .carrusel")){
         cursor.classList.add("cursor-activo")
     }else{
         cursor.classList.remove("cursor-activo")
@@ -93,5 +93,70 @@ document.addEventListener("mousemove", (e) => {
         logo.style.transform = `translate(0px, 0px)`;
     }
 });
-    
+
+window.addEventListener("load", () => {
+    const carrusel = document.querySelector(".carrusel");
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+    let autoPlayInterval;
+
+    // 1. Clonamos las imágenes para el efecto infinito
+    carrusel.innerHTML += carrusel.innerHTML;
+
+    // 2. FUNCIÓN PARA INICIAR EL MOVIMIENTO AUTOMÁTICO
+    const startAutoPlay = () => {
+        clearInterval(autoPlayInterval)
+
+        autoPlayInterval = setInterval(() => {
+            if (!isDown) { // Solo se mueve si el usuario no está arrastrando
+                carrusel.scrollLeft += 1; // Velocidad (1px cada 40ms)
+            }
+        }, 30);
+    };
+
+    // 3. FUNCIÓN PARA DETENER EL MOVIMIENTO
+    const stopAutoPlay = () => {
+        clearInterval(autoPlayInterval);
+    };
+
+    // --- INTERACCIÓN DE ARRASTRE ---
+    carrusel.addEventListener('mousedown', (e) => {
+        isDown = true;
+        stopAutoPlay(); // Pausamos el auto-scroll al tocar
+        startX = e.pageX - carrusel.offsetLeft;
+        scrollLeft = carrusel.scrollLeft;
+    });
+
+    carrusel.addEventListener('mouseleave', () => {
+        isDown = false;
+        startAutoPlay(); // Reanudamos al salir el ratón
+    });
+
+    carrusel.addEventListener('mouseup', () => {
+        isDown = false;
+        startAutoPlay(); // Reanudamos al soltar el click
+    });
+
+    carrusel.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - carrusel.offsetLeft;
+        const walk = (x - startX) * 2; 
+        carrusel.scrollLeft = scrollLeft - walk;
+    });
+
+    // --- LÓGICA DE BUCLE INFINITO (TELETRANSPORTE) ---
+    carrusel.addEventListener("scroll", () => {
+        const mitad = carrusel.scrollWidth / 2;
+        
+        if (carrusel.scrollLeft >= mitad) {
+            carrusel.scrollLeft = 1;
+        } else if (carrusel.scrollLeft <= 0) {
+            carrusel.scrollLeft = mitad - 1;
+        }
+    });
+    startAutoPlay();
+
+});
 console.log("Contenido cargado correctamente.")
