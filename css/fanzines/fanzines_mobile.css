@@ -1,0 +1,38 @@
+@media screen and (max-width: 450px){
+    section.F_CYM h2{
+        font-size: 72px;
+        padding: 100px 0 0 20px;
+    }
+    .info-flex-cym,
+    .info-flex-huerta,
+    .info-flex-ciencia,
+    .info-flex-miCasa{
+        display: flex;
+        width: 100%;
+        height: auto;
+    }
+    .info-flex-cym p,
+    .info-flex-ciencia p,
+    .info-flex-miCasa p,
+    .info-flex-huerta p{
+        font-size: 14px;
+    }
+    .info-flex-cym img,
+    .info-flex-ciencia img,
+    .info-flex-miCasa img,
+    .info-flex-huerta img{
+        width: 40%;
+        padding: 5px;
+    }
+    .carrusel-magia,
+    .carrusel-ciencia,
+    .carrusel-miCasa,
+    .carrusel-huerta{
+        height: 30dvh;
+    }
+    .miCasa h2,
+    .huerta h2{
+        font-size: 72px;
+        padding: 20px 0 0 20px;
+    }
+}
