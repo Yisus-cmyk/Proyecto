@@ -6,6 +6,7 @@
     .cursor-personalizado{
         display: none;
     }
+    /*HEADER*/
     header{
         position: fixed;
         background: none;
@@ -100,9 +101,34 @@
                 font-size: 100px;
                 font-weight: 700;
             }
-    footer{
-        min-height: 75dvh;
+    /*MAIN*/
+    main h3{
+        font-size: 42px;
+        position: relative;
+        padding: 0 20PX;
+        display: flex;
+        justify-content: flex-end;
     }
+    .texto-gif{
+        display: flex;
+        width: 95%;
+        position: relative;
+    }
+    main .texto-gif p{
+        font-size: 28px;
+        display: flex;
+        justify-content: flex-end;
+    }
+    .gif img{
+        width: 300px;
+        position: absolute;
+        top: -100px;
+    }
+    section.portadasFanzines{
+        height: 80dvh;
+    }
+    
+    /*FOOTER*/
     .flex h2{
         font-size: 72px;
     }

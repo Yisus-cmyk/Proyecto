@@ -1,5 +1,5 @@
 @media screen and (max-width: 450px){
-
+        /*HEADER*/
     header{
         max-width: 100vw;
         top: 0;
@@ -16,6 +16,8 @@
         font-size: 80px;
         font-weight: 700;
     }
+
+    /*MAIN*/
     main h2{
         font-size: 80px;
         line-height: 0.8;
@@ -26,6 +28,25 @@
     main h3{
         font-size: 24px;
         position: relative;
+        padding-left: 20px;
+    }
+    main .manifiesto h2{
+        font-size: 42px;
+        padding-bottom: 20px ;
+    }
+    .texto-gif{
+        display: flex;
+        width: 85%;
+        position: relative;
+    }
+    main .texto-gif p{
+        font-size: 16px;
+    }
+    .gif img{
+        width: 100px;
+        position: absolute;
+        top: -20px;
+        left: 20px;
     }
     .flex h2{
         font-size: 30px;
@@ -33,6 +54,14 @@
         top: -25px;
         left: 25px;
     }
+    section.carrusel{
+        height: 40dvh;
+    }
+    section.portadasFanzines{
+        padding: 0;
+        height: 50dvh;
+    }
+    /*FOOTER*/
     section.flex div.footer-img{
         display: none;
     }
@@ -59,4 +88,9 @@
         align-items: center;
         justify-content: center;
     }
+        .flex h2 {
+        font-size: 30px;
+        position: relative;
+        top: 0px;
+        }
 }
