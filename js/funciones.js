@@ -57,7 +57,7 @@ botonMenu.addEventListener("click", () =>{
         };
         AnimacionTipo();
 
-    //Animación header
+    //ANIMACION HEADER
     const header = document.querySelector("header");
     let scrollDown = window.scrollY;
 
@@ -81,7 +81,7 @@ document.addEventListener("mousemove", (e) => {
 
     const distanciaX = e.clientX - xCentro;
     const distanciaY = e.clientY - yCentro;
-        //Rango de atracción
+        //RANGO
     const rangoX = 300;
     const rangoY = 80;
 
@@ -141,14 +141,14 @@ window.addEventListener("load", () => {
         };
 
         //RATÓN
-        carrusel.addEventListener('mousedown', startAction);
-        carrusel.addEventListener('mouseleave', stopAction);
-        carrusel.addEventListener('mouseup', stopAction);
-        carrusel.addEventListener('mousemove', moveAction);
+        carrusel.addEventListener("mousedown", startAction);
+        carrusel.addEventListener("mouseleave", stopAction);
+        carrusel.addEventListener("mouseup", stopAction);
+        carrusel.addEventListener("mousemove", moveAction);
         //MOVIL
-        carrusel.addEventListener('touchstart', startAction, { passive: false });
-        carrusel.addEventListener('touchend', stopAction);
-        carrusel.addEventListener('touchmove', moveAction, { passive: false });
+        carrusel.addEventListener("touchstart", startAction, { passive: false });
+        carrusel.addEventListener("touchend", stopAction);
+        carrusel.addEventListener("touchmove", moveAction, { passive: false });
 
         // Lógica de bucle infinito
         carrusel.addEventListener("scroll", () => {
@@ -160,7 +160,6 @@ window.addEventListener("load", () => {
             }
         });
 
-        // Iniciamos el autoplay para este carrusel específico
         startAutoPlay();
     });
 });
