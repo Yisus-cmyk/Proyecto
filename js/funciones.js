@@ -150,12 +150,12 @@ window.addEventListener("load", () => {
         carrusel.addEventListener("touchend", stopAction);
         carrusel.addEventListener("touchmove", moveAction, { passive: false });
 
-        // Lógica de bucle infinito
+        // BUCLE
         carrusel.addEventListener("scroll", () => {
             const mitad = carrusel.scrollWidth / 2;
-            if (carrusel.scrollLeft >= mitad) {
+            if(carrusel.scrollLeft >= mitad){
                 carrusel.scrollLeft = 1;
-            } else if (carrusel.scrollLeft <= 0) {
+            } else if (carrusel.scrollLeft <= 0){
                 carrusel.scrollLeft = mitad - 1;
             }
         });

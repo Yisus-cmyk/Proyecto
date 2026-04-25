@@ -9,7 +9,7 @@ div.info{
     align-items: center;
     width: 100%;
     height: auto;
-    padding-top: 0;
+    padding-top: 20px;
 }
 div.info:nth-child(odd) {
     background-color: var(--color-principal);
@@ -39,11 +39,19 @@ div.info img{
 div.iconos{
     order: 2;
 }
+
 div.info:nth-child(even) .iconos {
     align-self: center; 
 }
 div.info:nth-child(odd) .iconos {
     align-self: center; 
 }
-
+div.iconos img {
+        width: 35px;
+        height: auto;
+    }
+    div.iconos a {
+        max-width: 100%;
+    }
 }
+
