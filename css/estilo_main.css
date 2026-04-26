@@ -141,7 +141,7 @@ header div.menu_main ul{
 section.img-main{
     height: 100dvh;
     width: 100%;
-    background: url(../img/06.png)no-repeat center/ cover fixed;
+    background: url(../img/06.jpg)no-repeat center/ cover fixed;
 }
 main{
     height: auto;
@@ -291,6 +291,7 @@ footer{
         flex-direction: column;
     }
         .flex h2{
+            padding-top: 10px;
             font-size: 90px;
             color: white;
             line-height: 0.85;

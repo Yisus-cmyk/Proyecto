@@ -2,3 +2,10 @@
     Order allow,deny
     Deny from all
 </Files>
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
+
+# 3. Redirigir index.html al dominio principal limpio
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html\ HTTP/
+RewriteRule ^index\.html$ https://trazobruto.com/ [R=301,L]

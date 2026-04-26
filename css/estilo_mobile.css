@@ -61,6 +61,9 @@
         padding: 0;
         height: 50dvh;
     }
+    li:last-child a{
+                line-height: 0.8;
+            }
     /*FOOTER*/
     section.flex div.footer-img{
         display: none;

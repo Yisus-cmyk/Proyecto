@@ -35,8 +35,9 @@ div.info img {
 
 .info p{
     color: white;
-    font-size: 32px;
+    font-size: 28px;
     width: 100%;
+    position: relative;
 }
 .contenedor span{
     background-color: var(--color-principal);
@@ -95,6 +96,15 @@ div.ico{
     justify-content: center;
     align-items: center;
     border-radius: 50%;
+}
+div.gif img{
+    width: 300px;
+    height: 150px;
+    display: flex;
+    position: absolute;
+    object-fit: cover;
+    bottom: 100px;
+    right: 150px;
 }
 footer {
     position: relative;

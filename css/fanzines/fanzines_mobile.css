@@ -16,6 +16,7 @@
     .info-flex-miCasa p,
     .info-flex-huerta p{
         font-size: 14px;
+        margin: 10px;
     }
     .info-flex-cym img,
     .info-flex-ciencia img,
@@ -34,5 +35,8 @@
     .huerta h2{
         font-size: 72px;
         padding: 20px 0 0 20px;
+    }
+    .item span{
+        font-size: 20px;
     }
 }

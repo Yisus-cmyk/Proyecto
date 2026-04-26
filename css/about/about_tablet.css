@@ -1,0 +1,8 @@
+@media screen and (width: 1180px){
+    div.gif img{
+        display: none;
+    }
+    .info p{
+        font-size: 24px;
+    }
+}
