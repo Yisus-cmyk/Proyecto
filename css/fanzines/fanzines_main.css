@@ -5,17 +5,28 @@ header.fanzines{
 body{
     background-color: rgb(30, 30, 30);
 }
+.miPadre h2{
+    display: flex;
+    justify-content: flex-end;
+    color: white;
+    font-size: 120px;
+    padding: 20px 100px;
+    padding-top: 130px;
+    line-height: 0.8;
+}
 .F_CYM h2{
     display: inline-block;
     color: white;
     font-size: 120px;
-    padding: 130px 0 0 100px;
+    padding: 0px 0 0 100px;
     line-height: 0.8;
 }
+
 .info-flex-cym,
 .info-flex-ciencia,
 .info-flex-miCasa,
-.info-flex-huerta{
+.info-flex-huerta,
+.info-flex-miPadre{
     display: flex;
     width: 100%;
     height: 70dvh;
@@ -44,7 +55,8 @@ body{
 .carrusel-magia,
 .carrusel-ciencia,
 .carrusel-miCasa,
-.carrusel-huerta{
+.carrusel-huerta,
+.carrusel-miPadre{
     display: flex;
     overflow-x: hidden;
     width: 100%;
@@ -60,21 +72,24 @@ body{
     .carrusel-magia img,
     .carrusel-ciencia img,
     .carrusel-miCasa img,
-    .carrusel-huerta img{
+    .carrusel-huerta img,
+    .carrusel-miPadre img{
         height: 100%;
         object-fit: cover;
         pointer-events: none;
     }
 
 .info-flex-ciencia img,
-.info-flex-miCasa img{
+.info-flex-miCasa img,
+.info-flex-miPadre img{
     width: auto;
     height: 100%;
     padding-left: 30px;
     object-fit: contain;
 }
 .info-flex-ciencia p,
-.info-flex-miCasa p{
+.info-flex-miCasa p,
+.info-flex-miPadre p{
     color: white;
     width: 50%; 
     text-align: start;

@@ -251,7 +251,7 @@ section.carrusel{
     }
 section.portadasFanzines{
     width: 100%;
-    height: 100dvh;
+    height: 125dvh;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -259,7 +259,7 @@ section.portadasFanzines{
 }
 section.portadasFanzines div{
     width: 100%;
-    height: 25%;
+    height: 25dvh;
 }
 .portadasFanzines div img{
     width: 100%;
