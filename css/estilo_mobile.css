@@ -59,7 +59,7 @@
     }
     section.portadasFanzines{
         padding: 0;
-        height: 50dvh;
+        height: 100dvh;
     }
     li:last-child a{
                 line-height: 0.8;
