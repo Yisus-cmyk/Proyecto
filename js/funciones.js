@@ -6,7 +6,7 @@ document.addEventListener("mousemove", (e) => {
     cursor.style.setProperty("--y", e.clientY + "px" )
 });
 document.addEventListener("mouseover", (e) => {
-    if(e.target.closest("a, button, input, .carrusel, .carrusel-magia, .carrusel-ciencia, .carrusel-miCasa, .carrusel-huerta, .carrusel-miPadre")){
+    if(e.target.closest("a, button, input, .carrusel, .carrusel-magia, .carrusel-ciencia, .carrusel-fanz")){
         cursor.classList.add("cursor-activo")
     }else{
         cursor.classList.remove("cursor-activo")
@@ -96,7 +96,7 @@ document.addEventListener("mousemove", (e) => {
 
 window.addEventListener("load", () => {
 
-    const carruseles = document.querySelectorAll(".carrusel, .carrusel-magia, .carrusel-ciencia, .carrusel-miCasa, .carrusel-huerta, .carrusel-miPadre");
+    const carruseles = document.querySelectorAll(".carrusel, .carrusel-magia, .carrusel-ciencia, .carrusel-fanz");
 
     carruseles.forEach(carrusel => {
         let isDown = false;
