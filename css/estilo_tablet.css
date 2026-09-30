@@ -17,6 +17,9 @@
     header .about-us{
         display: none;
     }
+    section.img-main {
+    background-attachment: scroll; 
+}
     .parallaxText{
         font-weight: 500;
         padding: 20px;
@@ -121,7 +124,7 @@
         top: -100px;
     }
     section.portadasFanzines{
-        height: 150dvh;
+        height: auto;
     }
     
     /*FOOTER*/
